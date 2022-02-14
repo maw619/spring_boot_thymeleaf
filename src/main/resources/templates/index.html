@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+      
+        <head>
+    <title>Good Thymes Virtual Grocery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  </head>
+
+  <body>
+  
+    <p >Welcome to our grocery store!</p>
+  	<a href="/goToForm">Go to add</a>
+  	 <table>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>update</th>
+        <th></th>
+      </tr>
+      <tr th:each="x : ${listar}">
+        <td th:text="${x.firstName}"/></td>
+        <td th:text="${x.lastName}"/></td>
+        <td th:text="${x.email}"/></td>
+        <td><a th:href="@{/updateForm(id=${x.id})}">Go</a></td>
+     	<td><a th:href="@{/delete(id=${x.id})}">delete</a></td>
+      </tr>
+	
+    </table>
+  </body>
+
+</html>

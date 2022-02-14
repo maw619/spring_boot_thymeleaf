@@ -1,0 +1,33 @@
+
+	<html xmlns:th="http://www.thymeleaf.org">
+      
+        <head>
+    <title>Good Thymes Virtual Grocery</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+  </head>
+
+  <body>
+  
+    <p >Add</p>
+  
+  	 <form action="#" th:action="@{/update}" th:object="${customer}" method="post">
+	
+		<input  type="hidden"  th:field="*{id}" />
+	
+		<label="firstName">First Name</label>
+		<input  type="text"  th:field="*{firstName}">#{firstName}</input>
+	
+	
+		<label="lastName">Last Name</label>
+		<input  type="text"  th:field="*{lastName}"> #{lasttName}</input>
+	
+	
+		<label="email">Email</:label>
+		<input  type="text" th:field="*{email}" > #{email}</input>
+	
+		<input type="submit" value="Submit">
+	</form>
+  </body>
+
+</html>
